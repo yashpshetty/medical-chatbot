@@ -68,7 +68,7 @@ vectorizer, doc_vectors, wiki_documents, loaded_topics, failed_topics = load_kno
 # ============================================================
 # CORE FUNCTIONS
 # ============================================================
-def query_llm(messages, max_tokens=400):
+def query_llm(messages, max_tokens=500):
     if not HF_API_TOKEN:
         return "HF_API_TOKEN not set. Go to Settings -> Secrets and add your token."
     payload = {"model": MODEL, "messages": messages, "max_tokens": max_tokens}
@@ -105,7 +105,7 @@ def classify_intent(user_input, chat_history):
         },
         {"role": "user", "content": f"Classify: {user_input}"}
     ]
-    result = query_llm(messages, max_tokens=10).strip().lower()
+    result = query_llm(messages, max_tokens=50).strip().lower()
     if "greeting" in result:
         return "greeting"
     elif "non_medical" in result or "non-medical" in result:
