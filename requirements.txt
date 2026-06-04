@@ -2,3 +2,4 @@ requests
 scikit-learn
 streamlit
 wikipedia
+pillow
