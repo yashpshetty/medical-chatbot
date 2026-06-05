@@ -3,3 +3,6 @@ scikit-learn
 streamlit
 wikipedia
 pillow
+PyPDF2
+python-docx
+ 
